@@ -1,15 +1,21 @@
-# A2C (Advantage Actor-Critic):
-Combines the benefits of policy-based (Actor) and value-based (Critic) methods.
-The Actor proposes actions, and the Critic evaluates the actions using a value function.
-Advantage is calculated as the difference between the observed rewards and the expected rewards from the Critic.
-Updates to the policy (Actor) and value function (Critic) are performed simultaneously to improve both.
-# PPO (Proximal Policy Optimization):
-Designed to address issues of policy optimization stability in RL.
-Uses a trust region approach to prevent large policy updates.
-Balances exploration and exploitation by updating the policy within a "trust region" to ensure gradual changes.
-Prevents large policy changes that may lead to catastrophic performance drops.
-# DDPG (Deep Deterministic Policy Gradients):
-Extends the Actor-Critic architecture to continuous action spaces.
-Utilizes a deterministic policy, meaning the policy directly outputs continuous actions.
-Employs a separate target network to stabilize training by updating the target values less frequently.
-Incorporates experience replay and Ornstein-Uhlenbeck noise to enhance exploration and improve convergence.
+# Automated Stock Trading using Deep Reinforcement Algorithms
+
+Design an automated trading solution for single stock trading using an  ensemble strategy that employs deep
+reinforcement schemes.
+
+### Phase I: Financial Data Processing and Technical Indicators
+
+1. Download Dow-30, NASDAQ-100, or S&P 500 data, including Open, High, Low, Close prices, and Volume (OHLCV) and fundamental indicators.
+
+2. Obtain technical indicators and perform feature engineering: technical indicators, such as MACD, RSI; and fundamental indicators, such as EPS, ROI, ROE, P/E, P/S.
+
+### Phase II: Stock Selection and Portfolio Allocation with Backtesting Results
+
+1. Stock Selection: Perform supervised machine learning using classic machine learning algorithms (LSTM, Random Forest, SVM, Linear Regression, Lasso, Ridge) to select stocks based on fundamental multi-factor data, and select the top 25% of stocks every quarter; 
+
+2. Portfolio Allocation: Use DRL Ensemble strategy (including PPO, DDPG, A2C, SAC, and TD3) in FinRL for asset allocation of the selected stocks, trade with daily data, and output positions
+
+### Phase III: Deploy a DRL agent to an online trading platform
+
+1. Deployment: Deploy strategies to online trading platforms such as Alpaca for paper trading
+
